@@ -1,0 +1,41 @@
+<!-- update-job.ejs -->
+
+<div class="container mt-5">
+    <h2 class="mb-4"><%= isUpdate ? 'Update Job' : 'Add Job' %></h2>
+  
+    <form action="<%= isUpdate ? `/update-job/${job.id}` : '/add-job' %>" method="post">
+      <input type="hidden" id="id" name="id" value="<%= job.id %>" required>
+      
+      <div class="form-group">
+        <label for="role">Role:</label>
+        <input type="text" class="form-control" id="role" name="role" value="<%= job.role %>" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="company">Company:</label>
+        <input type="text" class="form-control" id="company" name="company" value="<%= job.company %>" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="location">Location:</label>
+        <input type="text" class="form-control" id="location" name="location" value="<%= job.location %>" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="package">Package:</label>
+        <input type="text" class="form-control" id="package" name="package" value="<%= job.package %>" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="skills">Skills:</label>
+        <input type="text" class="form-control" id="skills" name="skills" value="<%= job.skills.join(', ') %>" required>
+      </div>
+  
+      <% if (isUpdate) { %>
+        <button type="submit" class="btn btn-warning">Update Job</button>
+      <% } else { %>
+        <button type="submit" class="btn btn-success">Add Job</button>
+      <% } %>
+    </form>
+  </div>
+  
