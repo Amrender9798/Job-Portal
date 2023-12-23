@@ -1,1 +1,1 @@
-# Job-Portal
+This is a Job-Portal App created using HTML,CSS,EXPRESSJS,EMBEDDED JAVASCRIPT(EJS) using the portal user can find a job and recruiters can add,update,delete jobs from the portal architecture used to build the application is MVC
