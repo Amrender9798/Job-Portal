@@ -1,6 +1,6 @@
 <style>
   body {
-    background-color: #e9ecef;;
+    background-color: #e9ecef;
   }
 
   .welcome-container {
@@ -15,6 +15,9 @@
 
   .btn-container {
     margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allow buttons to wrap to the next line on small screens */
   }
 
   .btn-primary,
@@ -24,7 +27,7 @@
     padding: 1rem 2rem;
     border-radius: 10px;
     margin-right: 1rem;
-    /* Added margin to create space between buttons */
+    margin-bottom: 1rem; /* Adjusted margin between buttons */
   }
 
   .btn-primary {
@@ -46,6 +49,20 @@
   .btn-success:hover,
   .btn-danger:hover {
     filter: brightness(90%);
+  }
+
+  /* Media Query for small screens (max-width: 767px) */
+  @media (max-width: 767px) {
+    .btn-container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .btn-primary,
+    .btn-success,
+    .btn-danger {
+      margin-right: 0; /* Remove right margin on small screens */
+    }
   }
 </style>
 
