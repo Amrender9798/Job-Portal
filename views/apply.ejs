@@ -1,33 +1,71 @@
-<!-- views/apply.ejs -->
-
 <div class="container mt-5">
-  <div class="row justify-content-center align-items-center">
+  <div class="row justify-content-center">
     <div class="col-md-6">
-      <h2 class="mb-4 text-center">Apply for the Job</h2>
-      <div class="card shadow-lg">
+      <div class="card custom-card">
+        <div class="card-header bg-success text-white text-center">
+          <h2 class="mb-0">Apply for the Job <i class="fas fa-user-plus"></i></h2>
+        </div>
         <div class="card-body">
           <form action="/apply" method="post" enctype="multipart/form-data">
-            <div class="form-group">
-              <label for="name" class="font-weight-bold">Full Name</label>
-              <input type="text" class="form-control" id="name" name="name" placeholder="Enter your full name" required>
+            <div class="mb-3">
+              <label for="name" class="form-label"><i class="fas fa-user"></i> Full Name</label>
+              <div class="input-group">
+                <input type="text" class="form-control" id="name" name="name" placeholder="Enter your full name" required>
+                <span class="input-group-text"><i class="fas fa-user"></i></span>
+              </div>
             </div>
-            <div class="form-group">
-              <label for="email" class="font-weight-bold">Email</label>
-              <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+            <div class="mb-3">
+              <label for="email" class="form-label"><i class="fas fa-envelope"></i> Email</label>
+              <div class="input-group">
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+              </div>
             </div>
-            <div class="form-group">
-              <label for="contact" class="font-weight-bold">Contact Number</label>
-              <input type="tel" class="form-control" id="contact" name="contact" placeholder="Enter your contact number" required>
+            <div class="mb-3">
+              <label for="contact" class="form-label"><i class="fas fa-phone"></i> Contact Number</label>
+              <div class="input-group">
+                <input type="tel" class="form-control" id="contact" name="contact" placeholder="Enter your contact number" required>
+                <span class="input-group-text"><i class="fas fa-phone"></i></span>
+              </div>
             </div>
-            <div class="form-group">
-              <label for="resume" class="font-weight-bold">Upload Resume</label>
-              <input type="file" class="form-control-file" id="resume" name="resume" accept=".pdf, .doc, .docx" required>
+            <div class="mb-3">
+              <label for="resume" class="form-label"><i class="fas fa-file"></i> Upload Resume</label>
+              <div class="input-group">
+                <input type="file" class="form-control-file" id="resume" name="resume" accept=".pdf, .doc, .docx" required>
+                <!-- <span class="input-group-text"><i class="fas fa-file"></i></span> -->
+              </div>
               <small class="form-text text-muted">Accepted file formats: PDF, DOC, DOCX</small>
             </div>
-            <button type="submit" class="btn btn-primary btn-block">Submit Application</button>
+            <button type="submit" class="btn btn-success btn-block"><i class="fas fa-paper-plane"></i> Submit Application</button>
           </form>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<style>
+  .custom-card {
+    border: 2px solid #5bc0de;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(45deg, #5bc0de, #81c9d4);
+  }
+
+  .custom-card .card-header {
+    border-bottom: 2px solid #5bc0de;
+  }
+
+  .custom-card .btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+  }
+
+  .custom-card .btn-success:hover {
+    filter: brightness(90%);
+  }
+
+  body {
+    background-color: #f0f0f0;
+  }
+</style>

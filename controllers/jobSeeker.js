@@ -5,7 +5,13 @@ export const viewAllJobs = (req,res) => {
 }
 
 export const apply = (req,res) => {
-    return res.render("apply.ejs");
+    if (req.query.fromJobs === 'true') {
+        // Render the Apply page
+        res.render('apply');
+      } else {
+        // Redirect to the Jobs page if the condition is not met
+        res.redirect('/jobs');
+      }
 }
 
 
