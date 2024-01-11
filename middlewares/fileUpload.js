@@ -6,7 +6,7 @@ import { extname } from 'path';
 // Set up storage for multer
 const storage = diskStorage({
   destination: (req, file, cb) => {
-    cb(null, 'public/'); // Specify the destination directory
+    cb(null, './public/'); // Specify the destination directory
   },
   filename: (req, file, cb) => {
     const timestamp = Date.now();
